@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 70px;
+            line-height: 60px;
+            max-width: 1000px;
+            margin: auto;
+            font-weight: 700;
+            color: rgba(66, 66, 66, 0.5);
+        }
+        .letter {
+            display: inline-flex;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 15px;
+            border: 1px solid tomato;
+            border-radius: 10px;
+            width: 300px;
+            height: 340px;
+            align-items: center;
+            justify-content: center;
+            vertical-align: bottom;
+            background-color: #fbe9e7;
+        }
+        .letter:hover {
+            font-size: 200px;
+            color: #d50000;
+            
+        }
+
+    </style>
+</head>
+
+<body> 
+</body>
+
+<script>
+    let abc = ["А", "Б", "В", "Г", "Д", "Е", "Ё",
+                "Ж", "З", "И", "Й", "К", "Л", "М",
+                "Н", "О", "П", "Р", "С", "Т", "У",
+                "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ъ",
+                "Ы", "Ь", "Э", "Ю", "Я"];
+
+    abc.forEach(function(item, i, abc){
+        let div = document.createElement("div");
+        div.className = "letter";
+        div.innerHTML = item;
+        div.addEventListener("click", function(){
+            this.style.backgroundImage = "url('img/" + i + ".jpg')";
+            this.style.backgroundRepeat = "no-repeat";
+            this.style.backgroundPosition = "center";
+        });
+        document.body.append(div);
+    });    
+</script>
+</html>
